@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Programs & Schools | ApplyBoard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script/taliwind.js"></script>
+    
+</head>
+<body> 
+<main>
+    <div>
+      <nav class="justify-center flex bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 shadow-[0_6px_33px_-22px_rgba(0,0,0,0.3)]">
+        <div class=" px-[50px] w-[100%]">
+          <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 w-[100%]">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-[#0000e1] font-[500px]">ApplyBoard</span>
+            </a>
+            <div class="flex md:order-2">
+               
+                <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 me-[10px]">
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                  </svg>
+              </button>
+              <button type="button" class="max-[600px]:hidden border-[#0000e1] text-[#0000e1] border font-medium rounded-lg text-sm px-4 py-2 text-center w-[100px]">Log In</button>
+              <button type="button" class="max-[600px]:hidden text-white bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 text-center w-[100px] mx-[10px]">Register</button>
+            </div>
+            <div class="items-center justify-between max-[991px]:hidden w-full min-[991px]::flex min-[991px]:w-auto min-[991px]:order-1">
+              <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                  <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Students</a>
+                </li>
+                <li>
+                  <a href="#" class="block py-2 px-3 text-[#0000e1] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Recruitment Partners</a> 
+                </li>
+                <li>
+                  <a href="#" class="block py-2 px-3 text-[#0000e1] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Schools</a>
+                </li>
+              </ul>
+            </div>
+            </div>
+        </div>
+      </nav>
+  
+    <section class="mt-[120px]  flex justify-center">
+      <div class=" flex sm:gap-[5px] md:gap-[20px] px-[50px]" id="filter_sec">
+        
+        <button onclick="openList()" class=" filterBtn border-[#a9b1cc] border font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+          <span class="me-[15px] text-[#1D4ED8]"><i class="fa-solid fa-filter"></i></span>
+          All Filters
+        </button>
+        
+          <div class="z-[100] layout bg-[gray] bg-opacity-[0.7] fixed right-[0%] top-0 z-20 h-[100%] transition-all duration-1000 w-0 opacity-[0]" id="sidelist">
+            <div class="filterall_list absolute bg-[#FFF] top-[0%] z-20 right-0 w-[100%] md:w-[40%] h-[100%]">
+              <div class="flex justify-between">
+              <h3 class="m-[40px] text-[30px]">All Filters</h3>
+                <button class="mx-[30px]" onclick="closeList()"><i class="fa-solid fa-xmark hover:bg-[#000] hover:text-white p-3 transition-all duration-300 rounded-[5px]"></i></button>
+              </div>
+              
+              <div class="flex flex-col border m-[20px] rounded-[10px]  border-[#d7dae8]" >
+                <button id="Location-side" onclick="droplistInside(event)" class="border-b p-4 border-[#d7dae8] flex justify-between font-medium"><p>Location</p><span class="ms-[15px]"><i class="arrow fa-solid fa-angle-down transition-all duration-[0.3s]" aria-hidden="true"></i></span></button>
+                <div class="sidebar-list border-b border-[#d7dae8] hidden transition-all duration-1000">
+                  <ul class="p-3 text-sm text-black" aria-labelledby="dropdownDefaultButton">
+                    <li class="p-4 flex" onchange='addFilter(event)'>
+                        <input onchange='checkBlueSign(event)' class="me-[10px]" type="checkbox" id="California1" name="California" value="California" checkotherinput="California_Top" headerdroplist="Location">
+                        <label onclick="checkToGeather(event)" id="California" class="text-[16px] block truncate w-[250px]" for="California1" checkotherinput="California_Top"> California</label>
+                    </li>
+                    
+                    <li class="p-4 flex" onchange='addFilter(event)'>
+                        <input onchange='checkBlueSign(event)' class="me-[10px]" type="checkbox" id="British_Columbia1" name="British Columbia" value="British Columbia" checkotherinput ="British_Columbia_Top" headerdroplist="Location">
+                        <label onclick="checkToGeather(event)" id="British_Columbia_side" class="text-[16px] block truncate w-[250px]" for="British_Columbia1" checkotherinput ="British_Columbia_Top"> British Columbia</label>
+                    </li>
+                </ul>
+                </div>
+                <button id="Program_level-side" onclick="droplistInside(event)" class="border-b p-4 border-[#d7dae8] flex justify-between font-medium">Program level<span class="ms-[15px]"><i class="arrow fa-solid fa-angle-down transition-all duration-[0.3s]" aria-hidden="true"></i></span></button>
+                <div class="sidebar-list border-b p-4 border-[#d7dae8] hidden transition-all duration-1000">
+                  <ul class="p-3 text-sm text-black" aria-labelledby="dropdownDefaultButton">
+                    <li class="p-4 flex" onchange='addFilter(event)'>
+                        <input onchange='checkBlueSign(event)'  class="me-[10px]" type="checkbox" id="Bachelor's_Degree1" name="Bachelor's Degree" value="Bachelor's Degree" checkotherinput="Bachelor's_Degree_Top" headerdroplist="Program_level">
+                        <label onclick="checkToGeather(event)" id="Bachelor's_Degree_side" class="text-[16px] block truncate w-[250px]" for="Bachelor's_Degree1" checkotherinput="Bachelor's_Degree_Top"> Bachelor's Degree</label>
+                    </li>
+                    
+                    <li class="p-4 flex" onchange='addFilter(event)'>
+                        <input onchange='checkBlueSign(event)' class="me-[10px]" type="checkbox" id="English_as_a_Second_Language(ESL)1" name="English as a Second Language(ESL)" value="English as a Second Language(ESL)" checkotherinput="English_as_a_Second_Language(ESL)_Top" headerdroplist="Program_level">
+                        <label onclick="checkToGeather(event)" id="English_as_a_Second_Language(ESL)_side" class="text-[16px] block truncate w-[250px]" for="English_as_a_Second_Language(ESL)1" checkotherinput="English_as_a_Second_Language(ESL)_Top"> English as a Second Language(ESL)</label>
+                    </li>
+                </ul>
+                </div>
+                <button id="Discipline-side" onclick="droplistInside(event)" class="border-0 p-4 border-[#d7dae8] flex justify-between font-medium">Discipline<span class="ms-[15px]"><i class="arrow fa-solid fa-angle-down transition-all duration-[0.3s]" aria-hidden="true"></i></span></button>
+                <div class="sidebar-list border-t p-4 border-[#d7dae8] hidden transition-all  duration-500">
+                  <ul class="p-3 text-sm text-black" aria-labelledby="dropdownDefaultButton">
+                    <li class="p-4 flex" onchange='addFilter(event)'>
+                        <input onchange='checkBlueSign(event)'class="me-[10px]" type="checkbox" id="Arts1" name="Arts" value="Arts" checkotherinput="Arts_Top" headerdroplist="Discipline">
+                        <label onclick="checkToGeather(event)" id="Arts_side" class="text-[16px] block truncate w-[250px]" for="Arts1" checkotherinput="Arts_Top"> Arts</label>
+                    </li>
+                    
+                    <li class="p-4 flex" onchange='addFilter(event)'>
+                        <input onchange='checkBlueSign(event)'headerdroplistclass="me-[10px]" type="checkbox" id="English_For_Academic_Studies1" name="English For Academic Studies" value="English For Academic Studies" checkotherinput="English_For_Academic_Studies_Top" headerdroplist="Discipline">
+                        <label onclick="checkToGeather(event)" id="English_For_Academic_Studies_side" class="text-[16px] block truncate w-[250px]" for="English_For_Academic_Studies1" checkotherinput="English_For_Academic_Studies_Top"> English For Academic Studies</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+    <section id="selectedItemsFilterd" class="flex justify-center flex-wrap my-4 w-[90%] mx-[auto] overflow-hidden">
+      <div class=" flex flex-col lg:flex-row px-[50px] selectedItemsFilterd flex-wrap ">
+      </div>
+    </section>
+    <section class="displayResult mt-4">
+      <div class=" flex  py-[50px] justify-center">
+          <div class="px-[20px] flex flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:h-[100vh] gap-y-[20px] lg:gap-[20px]" id="displayCardsSidebar">
+  
+          </div>
+          <div class="w-[60%] border mx-[30px] rounded-[10px] overflow-hidden hidden lg:block" id="displayCardDetails">
+
+          </div>
+    </section>
+    </div>
+</main>
+<script src="data/api.js"></script>
+<script src="data/filterBtns.js"></script>
+<script src="https://kit.fontawesome.com/0313e0792e.js" crossorigin="anonymous"></script>
+  <script src="script/main.js"></script>
+</body>
+</html>
